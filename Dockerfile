@@ -7,7 +7,7 @@ RUN upx --brute hello-world
 
 # Stage 2 - Compact and deliver to production
 
-FROM gcr.io/distroless/static
+FROM scratch
 WORKDIR /go
 COPY --from=builder /go/hello-world .
 ENTRYPOINT ["./hello-world"]
